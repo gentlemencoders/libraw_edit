@@ -340,6 +340,11 @@ public:
   virtual int adobe_coeff(unsigned, const char *, int internal_only = 0);
 
   void set_dng_host(void *);
+	
+	// Nik Bhatt: need this pointer to seek the file.
+	libraw_internal_data_t* internal_data() {
+		return &libraw_internal_data;
+	}
 
 protected:
   static void *memmem(char *haystack, size_t haystacklen, char *needle,
